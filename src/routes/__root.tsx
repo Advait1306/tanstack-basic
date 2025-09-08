@@ -11,6 +11,7 @@ import { DefaultCatchBoundary } from '~/components/DefaultCatchBoundary'
 import { NotFound } from '~/components/NotFound'
 import appCss from '~/styles/app.css?url'
 import { seo } from '~/utils/seo'
+import { registerServiceWorker } from '~/utils/serviceWorker'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -63,6 +64,15 @@ export const Route = createRootRoute({
 })
 
 function RootDocument({ children }: { children: React.ReactNode }) {
+  React.useEffect(() => {
+    // Register service worker when component mounts
+    if (typeof window !== 'undefined') {
+      registerServiceWorker().catch((error) => {
+        console.error('Failed to register service worker:', error);
+      });
+    }
+  }, []);
+
   return (
     <html>
       <head>

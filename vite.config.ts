@@ -7,6 +7,11 @@ export default defineConfig({
   server: {
     port: 3000,
   },
+  build: {
+    rollupOptions: {
+      external: ['workbox-config.js']
+    }
+  },
   plugins: [
     tsConfigPaths({
       projects: ["./tsconfig.json"],

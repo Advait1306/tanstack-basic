@@ -21,3 +21,11 @@ Especially, combined with the next step.
 ![JS Chunk Cache](./images/linear-js-chunk.png)
 
 They use a clever technique where they store even their chunked javascript bundles in the service worker. Given that it'll rarely change unless there are updates, this is pretty smart.
+
+## Recreation
+
+Based on this recreation, I have created a project which combines tanstack and workbox to achive similar functionality.
+
+Deployed version is available here:
+
+[native-web-application.advaitb.com](https://native-web-application.advaitb.com)

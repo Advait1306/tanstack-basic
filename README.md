@@ -1,6 +1,6 @@
 # Native web application
 
-I was inspired by how linear.app was able to feel native and has killer offline support.
+I was inspired by how [linear.app](https://linear.app) was able to feel native and has killer offline support.
 
 On 8th September 2025, I decided to take a look under the hood.
 
@@ -24,7 +24,7 @@ They use a clever technique where they store even their chunked javascript bundl
 
 ## Recreation
 
-Based on this recreation, I have created a project which combines tanstack and workbox to achive similar functionality.
+Based on this, I have created a project which combines tanstack and workbox to achive similar functionality.
 
 Deployed version is available here:
 

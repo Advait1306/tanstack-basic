@@ -5,8 +5,6 @@ const isVercel = process.env.VERCEL;
 const publicDir = isVercel ? path.join(__dirname, '.vercel', 'output', 'static') : path.join(__dirname, '.output', 'public');
 const swDestDir = isVercel ? path.join(__dirname, '.vercel', 'output', 'static') : path.join(__dirname, '.output', 'public');
 
-console.log(isVercel, publicDir, swDestDir);
-
 module.exports = {
   globDirectory: publicDir,
   globPatterns: [

@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite dev",
-    "build": "vite build && tsc --noEmit && workbox generateSW workbox-config.cjs && cp .output/public/sw.js* .output/public/workbox-*.js* public/",
+    "build": "vite build --preset vercel && tsc --noEmit && workbox generateSW workbox-config.cjs && cp .output/public/sw.js* .output/public/workbox-*.js* public/",
     "start": "node .output/server/index.mjs"
   },
   "dependencies": {

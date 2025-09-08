@@ -1,7 +1,12 @@
 const path = require('path');
 
+// Use different paths based on build target
+const isVercel = process.env.VERCEL;
+const publicDir = isVercel ? path.join(__dirname, '.vercel', 'output', 'static') : path.join(__dirname, '.output', 'public');
+const swDestDir = isVercel ? path.join(__dirname, '.vercel', 'output', 'static') : path.join(__dirname, '.output', 'public');
+
 module.exports = {
-  globDirectory: path.join(__dirname, '.output', 'public'),
+  globDirectory: publicDir,
   globPatterns: [
     '**/*.{css,html,png,jpg,jpeg,svg,webp,ico,woff,woff2}'
   ],
@@ -11,7 +16,7 @@ module.exports = {
     'workbox-*.js',
     'assets/**/*.js'
   ],
-  swDest: path.join(__dirname, '.output', 'public', 'sw.js'),
+  swDest: path.join(swDestDir, 'sw.js'),
   skipWaiting: true,
   clientsClaim: true,
   runtimeCaching: [

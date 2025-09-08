@@ -18,7 +18,7 @@ export default defineConfig({
     }),
     tanstackStart({
       customViteReactPlugin: true,
-      target: "vercel",
+      target: process.env.VERCEL ? "vercel" : "node-server",
       spa: {
         enabled: true,
       },

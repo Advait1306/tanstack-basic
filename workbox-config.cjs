@@ -3,7 +3,13 @@ const path = require('path');
 module.exports = {
   globDirectory: path.join(__dirname, '.output', 'public'),
   globPatterns: [
-    '**/*.{js,css,html,png,jpg,jpeg,svg,webp,ico,woff,woff2}'
+    '**/*.{css,html,png,jpg,jpeg,svg,webp,ico,woff,woff2}'
+  ],
+  globIgnores: [
+    '**/node_modules/**/*',
+    'sw.js',
+    'workbox-*.js',
+    'assets/**/*.js'
   ],
   swDest: path.join(__dirname, '.output', 'public', 'sw.js'),
   skipWaiting: true,

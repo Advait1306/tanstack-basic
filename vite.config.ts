@@ -9,8 +9,8 @@ export default defineConfig({
   },
   build: {
     rollupOptions: {
-      external: ['workbox-config.js']
-    }
+      external: ["workbox-config.js"],
+    },
   },
   plugins: [
     tsConfigPaths({
@@ -18,6 +18,7 @@ export default defineConfig({
     }),
     tanstackStart({
       customViteReactPlugin: true,
+      target: "vercel",
       spa: {
         enabled: true,
       },
